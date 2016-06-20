@@ -1,0 +1,15 @@
+<h1>To Do</h1>
+
+<h3>Insert a todo item</h3>
+<form action="/todo" method="POST">
+   <input type="text" placeholder="description" name = "description">
+   <input type="submit">
+</form>
+
+<ul>
+   {{#each data}}
+   <li> <form action = "/todo">
+      <input type="checkbox" class = "checkbox" id = {{this.id}} onchange="deleteItem(this.id)"> {{this.description}}
+   </form> </li>
+   {{/each}}
+</ul>
